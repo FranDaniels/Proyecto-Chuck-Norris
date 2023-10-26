@@ -24,7 +24,7 @@ async function obtenerCategoria(){
 }
 
 function cargarCategoria(data){
-    categoria=new Categoria(data.nombre,data.frase); 
+    categoria=new Categoria(data.nombre); 
     localStorage.setItem("categoriaFrase",JSON.stringify(categoria)) 
     return categoria;
 }
@@ -45,4 +45,13 @@ function listarTablaCategorias(categoria) {
         tabla.appendChild(fila);
     });
 }
+
+function cargarFrase(data,categoria) {
+    data.value.forEach(element => {
+        var frasesCategoria = new Frase(element.frases.value)
+        categoria.agregarFrase(frasesCategoria)
+    });
+    
+    return categoria
+  }
 

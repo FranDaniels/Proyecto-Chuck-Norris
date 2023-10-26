@@ -9,6 +9,7 @@ export class Categoria{
     }
 
     agregarFrases(frases){
+        console.log(frases)
         frases.forEach(element => {
             var frase = new Frase(element.chiste)
             this.agregarFrase(frase)
