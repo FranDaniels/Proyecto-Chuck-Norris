@@ -37,7 +37,7 @@ function listarTablaCategorias(categoria) {
 
         var enlaceCelda = document.createElement("td");
         var enlace = document.createElement("a");
-        enlace.href = '../frase.html';
+        enlace.href = '../src/frases.html';
         enlace.textContent = categoria;
 
         enlaceCelda.appendChild(enlace);
