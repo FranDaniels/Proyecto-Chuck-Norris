@@ -15,6 +15,7 @@ async function obtenerCategoria(){
             throw new Error('No se pudo obtener la Categoria')
         }else{
             const data = await response.json();
+            cargarCategoria(data)
             listarTablaCategorias(data)
         }
     } catch (error) {
@@ -23,7 +24,8 @@ async function obtenerCategoria(){
 }
 
 function cargarCategoria(data){
-    categoria=new Categoria(data.nombre);  
+    categoria=new Categoria(data.nombre,data.frase); 
+    localStorage.setItem("categoriaFrase",JSON.stringify(categoria)) 
     return categoria;
 }
 
