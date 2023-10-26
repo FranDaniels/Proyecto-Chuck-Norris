@@ -7,6 +7,13 @@ export class Categoria{
     agregarFrase(frase){
         this.frases.push(frase)
     }
+
+    agregarFrases(frases){
+        frases.forEach(element => {
+            var frase = new Frase(element.chiste)
+            this.agregarFrase(frase)
+        });
+    }
 }
 
 export class Frase{
