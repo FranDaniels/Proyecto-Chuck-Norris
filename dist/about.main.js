@@ -1,0 +1,1 @@
+(()=>{"use strict";var e,a;e=localStorage.getItem("categoriaFrase"),a=JSON.parse(e),console.log(a)})();
