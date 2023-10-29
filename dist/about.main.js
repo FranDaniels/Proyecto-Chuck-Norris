@@ -1,0 +1,1 @@
+(()=>{var e=document.getElementById("fraseCate"),t=localStorage.getItem("frase"),a=JSON.parse(t);console.log(a),e.textContent=a.value})();
