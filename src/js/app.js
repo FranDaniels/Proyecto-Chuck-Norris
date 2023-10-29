@@ -3,10 +3,9 @@ import { Frase } from "./clases.js";
 
 const apiUrl="https://api.chucknorris.io/jokes/categories";
 
-var frase;
+
 var categoria;
 
-obtenerCategoria()
 
 async function obtenerCategoria(){
     try {
@@ -15,18 +14,12 @@ async function obtenerCategoria(){
             throw new Error('No se pudo obtener la Categoria')
         }else{
             const data = await response.json();
-            cargarCategoria(data)
             listarTablaCategorias(data)
+            cargarCategoria(data)
         }
     } catch (error) {
         console.error(error)
     }
-}
-
-function cargarCategoria(data){
-    categoria=new Categoria(data.nombre); 
-    localStorage.setItem("categoriaFrase",JSON.stringify(categoria)) 
-    return categoria;
 }
 
 function listarTablaCategorias(categoria) {
@@ -46,12 +39,10 @@ function listarTablaCategorias(categoria) {
     });
 }
 
-function cargarFrase(data,categoria) {
-    data.value.forEach(element => {
-        var frasesCategoria = new Frase(element.frases.value)
-        categoria.agregarFrase(frasesCategoria)
-    });
-    
-    return categoria
-  }
+function cargarCategoria(data){
+    categoria=new Categoria(data); 
+    listarTablaCategorias(categoria.nombre)
+}
 
+
+obtenerCategoria()
