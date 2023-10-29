@@ -1,1 +1,1 @@
-(()=>{"use strict";var e,a;e=localStorage.getItem("categoriaFrase"),a=JSON.parse(e),console.log(a)})();
+(()=>{var e=document.getElementById("fraseCate"),t=localStorage.getItem("frase"),a=JSON.parse(t);console.log(a),e.textContent=a.value})();
