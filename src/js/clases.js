@@ -18,7 +18,7 @@ export class Categoria{
 }
 
 export class Frase{
-    constructor(chiste){
-        this.chiste=chiste
+    constructor(value){
+        this.frase=value
     }
 }
